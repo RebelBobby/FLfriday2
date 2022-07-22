@@ -23,33 +23,45 @@ namespace testingclasses
 
 /*-----------------------------------second class*/
 
+
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Nerd
+namespace testingclasses
 {
-    internal class Person
+    class Program
     {
-        public int Age { get; set; }
-        public string FirstName { get; set; }
-
-        public string LastName { get; set; }
-
-        public Person() { }
-        public Person(string firstName, string lastName, int age)
+        static void Main(string[] args)
         {
-            Age = age; FirstName = firstName; LastName = lastName;
+            Console.WriteLine("Collections ");
+            
+            static void UseList(){
+                List<Person> people = new List<Person>(){
+                    new Person {FirstName = "Greg", LastName = "Student", Age =18 },
+                    new Person {FirstName = "Nexus", LastName = "Student", Age =18 },
+                    new Person {FirstName = "Joseph", LastName = "Student", Age =18 },
+                    new Person {FirstName = "Art", LastName = "Student", Age =18 },
+                    new Person {FirstName = "Juan", LastName = "Student", Age =18 }
+                };
+
+                Console.WriteLine("Items in list : {0}", people.Count);
+
+                foreach (Person p in people){
+                    Console.WriteLine("\n ->Adding new person.");
+                }
+                    
+                    Console.WriteLine("\n ->Adding new person.");
+                    people.Insert(2, new Person {FirstName = "JJ", LastName = "Student, Age = 21"});
+                    Console.WriteLine("Items in list : {0}", people.Count);
+
+                    Person[] arrayOfPeople = people.ToArray();
+                    foreach (Person p in people){
+                        Console.WriteLine("First Names: {0}", p.FirstName);
+                }
+            }
 
         }
-        public override string ToString()
-        {
-            return $"Name: {FirstName} {LastName}, Age: {Age}";
-        }
+
     }
-
 }
 
 

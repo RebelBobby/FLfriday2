@@ -1,20 +1,25 @@
-
-using System;
-
-namespace Nerd
+namespace testingclasses
 {
-    class Program
+    internal class Person
     {
-        static void Main(string[] args)
+        public int Age { get; set; }
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public Person() { }
+        public Person(string firstName, string lastName, int age)
         {
-            Console.WriteLine("Hello, Nerd head!");
-       
+            Age = age; FirstName = firstName; LastName = lastName;
 
         }
-
+        public override string ToString()
+        {
+            return $"Name: {FirstName} {LastName}, Age: {Age}";
+        }
     }
-}
 
+}
 
 /*-----------------------------------second class*/
 
